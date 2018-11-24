@@ -1,0 +1,6 @@
+#!/bin/bash
+#script to compile the user end
+
+gcc -g main.c -o test -lhidapi-libusb
+#./test
+echo "done"
