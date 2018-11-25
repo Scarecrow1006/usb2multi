@@ -16,7 +16,7 @@ unsigned char buf[65];
 void cat(char fn[]);
 int setmode(hid_device *handle);
 void delay(int mili);
-void send_usb(char c, hid_device *handle);
+void send_usb(char cmd, char data, hid_device *handle);
 void reset_mode(hid_device *handle);
 
 int main(int argc, char* argv[]){
@@ -77,7 +77,7 @@ int main(int argc, char* argv[]){
 				}
 			}
 
-			if(!rstflag) send_usb(c,handle);
+			if(!rstflag) send_usb(1,c,handle);
 			else {
 				reset_mode(handle);
 				mode=0;
@@ -104,6 +104,7 @@ void cat(char fn[]){
 
 int setmode(hid_device *handle){
 	int mode=0;
+	int slvaddr;
 	cat("mode");
 	while((mode==0) || (mode>=5)){
 		printf(">");
@@ -121,6 +122,9 @@ int setmode(hid_device *handle){
 			break;
 		case 3: 
 			printf("Switching to I2C...\n");
+			printf("I2C slave address: ");
+			scanf("%d", &slvaddr);
+			send_usb(2,(unsigned char) slvaddr, handle);
 			break;
 		case 4: 
 			printf("Switching to PWM...\n");
@@ -130,16 +134,16 @@ int setmode(hid_device *handle){
 	return mode;
 }
 
-void delay(int mili) { 
+void delay(int mili) {
 	clock_t start_time = clock();
 	while (clock() < start_time + mili*CLOCKS_PER_SEC/1000); 
 }
 
-void send_usb(char c, hid_device *handle){
-	buf[0]=1;
+void send_usb(char cmd, char data, hid_device *handle){
+	buf[0]=(unsigned char) cmd;
 	hid_write(handle, buf, 65);
 	delay(10);
-	buf[0]=(unsigned char) c;
+	buf[0]=(unsigned char) data;
 	hid_write(handle, buf, 65);
 	delay(10);
 }
