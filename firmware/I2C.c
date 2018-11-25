@@ -73,3 +73,14 @@ void I2C_func(unsigned char addr, unsigned char dat)
 	I2C_WRITE(dat);
 	I2C_STOP();
 }
+
+unsigned char I2C_funcr(unsigned char addr)
+{
+	unsigned char tmp;
+	I2C_INIT();
+	I2C_START();
+	I2C_WRITE(addr|0x01);
+	tmp = I2C_READ_NACK();
+	I2C_STOP();
+	return tmp;
+}

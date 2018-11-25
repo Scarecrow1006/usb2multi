@@ -27,6 +27,7 @@
 #include "PWM.h"
 #include "SPI.h"
 #include "I2C.h"
+#include "ADC.h"
 
 BYTE InReport;                              /* HID Input Report */
                                             /*   Bit0,1,2:    Button */
@@ -44,23 +45,10 @@ unsigned char slvaddr;
  */
 
 void GetInReport (void) { //This is for Device(LPC2148) to Host PC reporting
-
-  if ((IOPIN0 & SW1) == 0)
-	{
-		InReport = 0x01;
+	switch (key){
+		case 3: InReport=I2C_funcr(slvaddr<<1); break;
+		case 5: InReport=ADC_func(); break;
 	}
-	else if((IOPIN0 & SW2) == 0)
-	{
-		InReport = 0x02;
-	}
-	else if((IOPIN0 & SW3) == 0) 
-	{              
-    InReport = 0x04;
-  } 
-	else 
-	{
-    InReport = 0x00;
-  }
 }
 
 

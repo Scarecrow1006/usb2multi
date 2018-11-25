@@ -3,8 +3,8 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\ashwin\Desktop\Academics\3-1\ESD\Project\Final\test\led.uvproj
-Project File Date:  11/24/2018
+C:\Users\ashwin\Desktop\DEL\FINAL\led.uvproj
+Project File Date:  11/25/2018
 
 <h2>Output:</h2>
 Build target 'Target 1'
@@ -13,7 +13,8 @@ compiling demo.c...
 usbcfg.h(24): warning:  #9-D: nested comment is not allowed
 PWM.h(12): warning:  #1-D: last line of file ends without a newline
 SPI.h(10): warning:  #1-D: last line of file ends without a newline
-I2C.h(14): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+ADC.h(15): warning:  #1-D: last line of file ends without a newline
 compiling PWM.c...
 PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
 PWM.c(100): warning:  #1-D: last line of file ends without a newline
@@ -22,9 +23,15 @@ SPI.h(10): warning:  #1-D: last line of file ends without a newline
 SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
 SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
 compiling i2c.c...
-I2C.h(14): warning:  #1-D: last line of file ends without a newline
-i2c.c(68): error:  #147: declaration is incompatible with "int I2C_func(unsigned char, unsigned char)" (declared at line 12 of "I2C.h")
-i2c.c(75): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+i2c.c(86): warning:  #1-D: last line of file ends without a newline
+compiling adc.c...
+ADC.h(15): warning:  #1-D: last line of file ends without a newline
+adc.c(33): error:  #20: identifier "ADCR" is undefined
+adc.c(38): error:  #20: identifier "ADDR" is undefined
+adc.c(44): warning:  #186-D: pointless comparison of unsigned integer with zero
+adc.c(84): warning:  #111-D: statement is unreachable
+adc.c(85): warning:  #1-D: last line of file ends without a newline
 Target not created
 Build target 'Target 1'
 assembling Startup.s...
@@ -32,7 +39,17 @@ compiling demo.c...
 usbcfg.h(24): warning:  #9-D: nested comment is not allowed
 PWM.h(12): warning:  #1-D: last line of file ends without a newline
 SPI.h(10): warning:  #1-D: last line of file ends without a newline
-I2C.h(14): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+demo.c(32): error:  #130: expected a "{"
+demo.c(47): warning:  #12-D: parsing restarts here after previous syntax error
+demo.c(48): error:  #20: identifier "slvaddr" is undefined
+demo.c(49): warning:  #940-D: missing return statement at end of non-void function "ADC_func"
+demo.c(61): error:  #20: identifier "key" is undefined
+demo.c(64): error:  #20: identifier "rst" is undefined
+demo.c(71): error:  #20: identifier "cmd" is undefined
+demo.c(102): error:  #20: identifier "cmd" is undefined
+demo.c(104): error:  #20: identifier "slvaddr" is undefined
 compiling PWM.c...
 PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
 PWM.c(100): warning:  #1-D: last line of file ends without a newline
@@ -41,32 +58,16 @@ SPI.h(10): warning:  #1-D: last line of file ends without a newline
 SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
 SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
 compiling i2c.c...
-I2C.h(14): warning:  #1-D: last line of file ends without a newline
-i2c.c(75): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=8620 RO-data=296 RW-data=44 ZI-data=1324  
-FromELF: creating hex file...
-"led.axf" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-assembling Startup.s...
-compiling demo.c...
-usbcfg.h(24): warning:  #9-D: nested comment is not allowed
-PWM.h(12): warning:  #1-D: last line of file ends without a newline
-SPI.h(10): warning:  #1-D: last line of file ends without a newline
-I2C.h(14): warning:  #1-D: last line of file ends without a newline
-demo.c(119): warning:  #223-D: function "i2c_func" declared implicitly
-compiling PWM.c...
-PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
-PWM.c(100): warning:  #1-D: last line of file ends without a newline
-compiling SPI.c...
-SPI.h(10): warning:  #1-D: last line of file ends without a newline
-SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
-SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
-compiling i2c.c...
-I2C.h(14): warning:  #1-D: last line of file ends without a newline
-i2c.c(75): warning:  #1-D: last line of file ends without a newline
-linking...
-led.axf: Error: L6218E: Undefined symbol i2c_func (referred from demo.o).
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+i2c.c(86): warning:  #1-D: last line of file ends without a newline
+compiling adc.c...
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+adc.c(18): error:  #130: expected a "{"
+adc.c(24): error:  #20: identifier "ADCR" is undefined
+adc.c(26): error:  #20: identifier "ADDR" is undefined
+adc.c(30): warning:  #1-D: last line of file ends without a newline
+adc.c(30): warning:  #940-D: missing return statement at end of non-void function "ADC_func"
+adc.c(21): warning:  #177-D: variable "voltage" was declared but never referenced
 Target not created
 Build target 'Target 1'
 assembling Startup.s...
@@ -74,7 +75,17 @@ compiling demo.c...
 usbcfg.h(24): warning:  #9-D: nested comment is not allowed
 PWM.h(12): warning:  #1-D: last line of file ends without a newline
 SPI.h(10): warning:  #1-D: last line of file ends without a newline
-I2C.h(14): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+demo.c(32): error:  #130: expected a "{"
+demo.c(47): warning:  #12-D: parsing restarts here after previous syntax error
+demo.c(48): error:  #20: identifier "slvaddr" is undefined
+demo.c(49): warning:  #940-D: missing return statement at end of non-void function "ADC_func"
+demo.c(61): error:  #20: identifier "key" is undefined
+demo.c(64): error:  #20: identifier "rst" is undefined
+demo.c(71): error:  #20: identifier "cmd" is undefined
+demo.c(102): error:  #20: identifier "cmd" is undefined
+demo.c(104): error:  #20: identifier "slvaddr" is undefined
 compiling PWM.c...
 PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
 PWM.c(100): warning:  #1-D: last line of file ends without a newline
@@ -83,9 +94,253 @@ SPI.h(10): warning:  #1-D: last line of file ends without a newline
 SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
 SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
 compiling i2c.c...
-I2C.h(14): warning:  #1-D: last line of file ends without a newline
-i2c.c(75): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+i2c.c(86): warning:  #1-D: last line of file ends without a newline
+compiling adc.c...
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+adc.c(18): error:  #130: expected a "{"
+adc.c(24): error:  #20: identifier "ADCR" is undefined
+adc.c(26): error:  #20: identifier "ADDR" is undefined
+adc.c(31): warning:  #1-D: last line of file ends without a newline
+adc.c(21): warning:  #177-D: variable "voltage" was declared but never referenced
+Target not created
+Build target 'Target 1'
+assembling Startup.s...
+compiling demo.c...
+usbcfg.h(24): warning:  #9-D: nested comment is not allowed
+PWM.h(12): warning:  #1-D: last line of file ends without a newline
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+demo.c(32): error:  #130: expected a "{"
+demo.c(47): warning:  #12-D: parsing restarts here after previous syntax error
+demo.c(48): error:  #20: identifier "slvaddr" is undefined
+demo.c(49): warning:  #940-D: missing return statement at end of non-void function "ADC_func"
+demo.c(61): error:  #20: identifier "key" is undefined
+demo.c(64): error:  #20: identifier "rst" is undefined
+demo.c(71): error:  #20: identifier "cmd" is undefined
+demo.c(102): error:  #20: identifier "cmd" is undefined
+demo.c(104): error:  #20: identifier "slvaddr" is undefined
+compiling PWM.c...
+PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
+PWM.c(100): warning:  #1-D: last line of file ends without a newline
+compiling SPI.c...
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
+SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
+compiling i2c.c...
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+i2c.c(86): warning:  #1-D: last line of file ends without a newline
+compiling adc.c...
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+adc.c(18): error:  #130: expected a "{"
+adc.c(26): error:  #20: identifier "AD0DR" is undefined
+adc.c(31): warning:  #1-D: last line of file ends without a newline
+adc.c(21): warning:  #177-D: variable "voltage" was declared but never referenced
+Target not created
+Build target 'Target 1'
+assembling Startup.s...
+compiling demo.c...
+usbcfg.h(24): warning:  #9-D: nested comment is not allowed
+PWM.h(12): warning:  #1-D: last line of file ends without a newline
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+demo.c(32): error:  #130: expected a "{"
+demo.c(47): warning:  #12-D: parsing restarts here after previous syntax error
+demo.c(48): error:  #20: identifier "slvaddr" is undefined
+demo.c(49): warning:  #940-D: missing return statement at end of non-void function "ADC_func"
+demo.c(61): error:  #20: identifier "key" is undefined
+demo.c(64): error:  #20: identifier "rst" is undefined
+demo.c(71): error:  #20: identifier "cmd" is undefined
+demo.c(102): error:  #20: identifier "cmd" is undefined
+demo.c(104): error:  #20: identifier "slvaddr" is undefined
+compiling PWM.c...
+PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
+PWM.c(100): warning:  #1-D: last line of file ends without a newline
+compiling SPI.c...
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
+SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
+compiling i2c.c...
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+i2c.c(86): warning:  #1-D: last line of file ends without a newline
+compiling adc.c...
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+adc.c(18): error:  #130: expected a "{"
+adc.c(24): error:  #20: identifier "ADCR" is undefined
+adc.c(26): error:  #20: identifier "ADDR" is undefined
+adc.c(31): warning:  #1-D: last line of file ends without a newline
+adc.c(21): warning:  #177-D: variable "voltage" was declared but never referenced
+Target not created
+Build target 'Target 1'
+assembling Startup.s...
+compiling demo.c...
+usbcfg.h(24): warning:  #9-D: nested comment is not allowed
+PWM.h(12): warning:  #1-D: last line of file ends without a newline
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+demo.c(32): error:  #130: expected a "{"
+demo.c(47): warning:  #12-D: parsing restarts here after previous syntax error
+demo.c(48): error:  #20: identifier "slvaddr" is undefined
+demo.c(49): warning:  #940-D: missing return statement at end of non-void function "ADC_func"
+demo.c(61): error:  #20: identifier "key" is undefined
+demo.c(64): error:  #20: identifier "rst" is undefined
+demo.c(71): error:  #20: identifier "cmd" is undefined
+demo.c(102): error:  #20: identifier "cmd" is undefined
+demo.c(104): error:  #20: identifier "slvaddr" is undefined
+compiling PWM.c...
+PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
+PWM.c(100): warning:  #1-D: last line of file ends without a newline
+compiling SPI.c...
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
+SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
+compiling i2c.c...
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+i2c.c(86): warning:  #1-D: last line of file ends without a newline
+compiling adc.c...
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+adc.c(18): error:  #130: expected a "{"
+adc.c(26): error:  #20: identifier "ADDR" is undefined
+adc.c(31): warning:  #1-D: last line of file ends without a newline
+adc.c(21): warning:  #177-D: variable "voltage" was declared but never referenced
+Target not created
+Build target 'Target 1'
+assembling Startup.s...
+compiling demo.c...
+usbcfg.h(24): warning:  #9-D: nested comment is not allowed
+PWM.h(12): warning:  #1-D: last line of file ends without a newline
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+demo.c(32): error:  #130: expected a "{"
+demo.c(47): warning:  #12-D: parsing restarts here after previous syntax error
+demo.c(48): error:  #20: identifier "slvaddr" is undefined
+demo.c(49): warning:  #940-D: missing return statement at end of non-void function "ADC_func"
+demo.c(61): error:  #20: identifier "key" is undefined
+demo.c(64): error:  #20: identifier "rst" is undefined
+demo.c(71): error:  #20: identifier "cmd" is undefined
+demo.c(102): error:  #20: identifier "cmd" is undefined
+demo.c(104): error:  #20: identifier "slvaddr" is undefined
+compiling PWM.c...
+PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
+PWM.c(100): warning:  #1-D: last line of file ends without a newline
+compiling SPI.c...
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
+SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
+compiling i2c.c...
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+i2c.c(86): warning:  #1-D: last line of file ends without a newline
+compiling adc.c...
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+adc.c(18): error:  #130: expected a "{"
+adc.c(31): warning:  #1-D: last line of file ends without a newline
+adc.c(21): warning:  #177-D: variable "voltage" was declared but never referenced
+Target not created
+Build target 'Target 1'
+assembling Startup.s...
+compiling demo.c...
+usbcfg.h(24): warning:  #9-D: nested comment is not allowed
+PWM.h(12): warning:  #1-D: last line of file ends without a newline
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+ADC.h(5): warning:  #260-D: explicit type is missing ("int" assumed)
+ADC.h(5): error:  #65: expected a ";"
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+compiling PWM.c...
+PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
+PWM.c(100): warning:  #1-D: last line of file ends without a newline
+compiling SPI.c...
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
+SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
+compiling i2c.c...
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+i2c.c(86): warning:  #1-D: last line of file ends without a newline
+compiling adc.c...
+ADC.h(5): warning:  #260-D: explicit type is missing ("int" assumed)
+ADC.h(5): error:  #65: expected a ";"
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+adc.c(31): warning:  #1-D: last line of file ends without a newline
+adc.c(21): warning:  #177-D: variable "voltage" was declared but never referenced
+Target not created
+Build target 'Target 1'
+assembling Startup.s...
+compiling demo.c...
+usbcfg.h(24): warning:  #9-D: nested comment is not allowed
+PWM.h(12): warning:  #1-D: last line of file ends without a newline
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+compiling PWM.c...
+PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
+PWM.c(100): warning:  #1-D: last line of file ends without a newline
+compiling SPI.c...
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
+SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
+compiling i2c.c...
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+i2c.c(86): warning:  #1-D: last line of file ends without a newline
+compiling adc.c...
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+adc.c(31): warning:  #1-D: last line of file ends without a newline
+adc.c(21): warning:  #177-D: variable "voltage" was declared but never referenced
 linking...
-Program Size: Code=9196 RO-data=296 RW-data=48 ZI-data=1320  
+Program Size: Code=9172 RO-data=296 RW-data=48 ZI-data=1320  
 FromELF: creating hex file...
-"led.axf" - 0 Error(s), 11 Warning(s).
+"led.axf" - 0 Error(s), 15 Warning(s).
+Build target 'Target 1'
+assembling Startup.s...
+compiling demo.c...
+usbcfg.h(24): warning:  #9-D: nested comment is not allowed
+PWM.h(12): warning:  #1-D: last line of file ends without a newline
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+compiling PWM.c...
+PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
+PWM.c(100): warning:  #1-D: last line of file ends without a newline
+compiling SPI.c...
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
+SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
+compiling i2c.c...
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+i2c.c(86): warning:  #1-D: last line of file ends without a newline
+compiling adc.c...
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+adc.c(31): warning:  #1-D: last line of file ends without a newline
+adc.c(21): warning:  #177-D: variable "voltage" was declared but never referenced
+linking...
+Program Size: Code=9352 RO-data=296 RW-data=48 ZI-data=1320  
+FromELF: creating hex file...
+"led.axf" - 0 Error(s), 15 Warning(s).
+Build target 'Target 1'
+assembling Startup.s...
+compiling demo.c...
+usbcfg.h(24): warning:  #9-D: nested comment is not allowed
+PWM.h(12): warning:  #1-D: last line of file ends without a newline
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+compiling PWM.c...
+PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
+PWM.c(100): warning:  #1-D: last line of file ends without a newline
+compiling SPI.c...
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
+SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
+compiling i2c.c...
+I2C.h(15): warning:  #1-D: last line of file ends without a newline
+i2c.c(86): warning:  #1-D: last line of file ends without a newline
+compiling adc.c...
+ADC.h(7): warning:  #1-D: last line of file ends without a newline
+adc.c(30): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=9344 RO-data=296 RW-data=48 ZI-data=1320  
+FromELF: creating hex file...
+"led.axf" - 0 Error(s), 14 Warning(s).
