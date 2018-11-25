@@ -1,0 +1,11 @@
+demo.o: demo.c
+demo.o: C:\Keil\ARM\INC\Philips\LPC214X.H
+demo.o: type.h
+demo.o: usb.h
+demo.o: usbcfg.h
+demo.o: usbhw.h
+demo.o: usbcore.h
+demo.o: demo.h
+demo.o: PWM.h
+demo.o: SPI.h
+demo.o: I2C.h

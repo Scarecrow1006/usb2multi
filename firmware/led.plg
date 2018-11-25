@@ -1,0 +1,91 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\ashwin\Desktop\Academics\3-1\ESD\Project\Final\test\led.uvproj
+Project File Date:  11/24/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Startup.s...
+compiling demo.c...
+usbcfg.h(24): warning:  #9-D: nested comment is not allowed
+PWM.h(12): warning:  #1-D: last line of file ends without a newline
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+I2C.h(14): warning:  #1-D: last line of file ends without a newline
+compiling PWM.c...
+PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
+PWM.c(100): warning:  #1-D: last line of file ends without a newline
+compiling SPI.c...
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
+SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
+compiling i2c.c...
+I2C.h(14): warning:  #1-D: last line of file ends without a newline
+i2c.c(68): error:  #147: declaration is incompatible with "int I2C_func(unsigned char, unsigned char)" (declared at line 12 of "I2C.h")
+i2c.c(75): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+assembling Startup.s...
+compiling demo.c...
+usbcfg.h(24): warning:  #9-D: nested comment is not allowed
+PWM.h(12): warning:  #1-D: last line of file ends without a newline
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+I2C.h(14): warning:  #1-D: last line of file ends without a newline
+compiling PWM.c...
+PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
+PWM.c(100): warning:  #1-D: last line of file ends without a newline
+compiling SPI.c...
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
+SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
+compiling i2c.c...
+I2C.h(14): warning:  #1-D: last line of file ends without a newline
+i2c.c(75): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=8620 RO-data=296 RW-data=44 ZI-data=1324  
+FromELF: creating hex file...
+"led.axf" - 0 Error(s), 11 Warning(s).
+Build target 'Target 1'
+assembling Startup.s...
+compiling demo.c...
+usbcfg.h(24): warning:  #9-D: nested comment is not allowed
+PWM.h(12): warning:  #1-D: last line of file ends without a newline
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+I2C.h(14): warning:  #1-D: last line of file ends without a newline
+demo.c(119): warning:  #223-D: function "i2c_func" declared implicitly
+compiling PWM.c...
+PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
+PWM.c(100): warning:  #1-D: last line of file ends without a newline
+compiling SPI.c...
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
+SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
+compiling i2c.c...
+I2C.h(14): warning:  #1-D: last line of file ends without a newline
+i2c.c(75): warning:  #1-D: last line of file ends without a newline
+linking...
+led.axf: Error: L6218E: Undefined symbol i2c_func (referred from demo.o).
+Target not created
+Build target 'Target 1'
+assembling Startup.s...
+compiling demo.c...
+usbcfg.h(24): warning:  #9-D: nested comment is not allowed
+PWM.h(12): warning:  #1-D: last line of file ends without a newline
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+I2C.h(14): warning:  #1-D: last line of file ends without a newline
+compiling PWM.c...
+PWM.c(32): warning:  #940-D: missing return statement at end of non-void function "PWM_func"
+PWM.c(100): warning:  #1-D: last line of file ends without a newline
+compiling SPI.c...
+SPI.h(10): warning:  #1-D: last line of file ends without a newline
+SPI.c(25): warning:  #550-D: variable "dummy" was set but never used
+SPI.c(38): warning:  #177-D: variable "i" was declared but never referenced
+compiling i2c.c...
+I2C.h(14): warning:  #1-D: last line of file ends without a newline
+i2c.c(75): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=9196 RO-data=296 RW-data=48 ZI-data=1320  
+FromELF: creating hex file...
+"led.axf" - 0 Error(s), 11 Warning(s).

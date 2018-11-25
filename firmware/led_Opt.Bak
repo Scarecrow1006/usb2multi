@@ -1,0 +1,36 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.s*; *.src; *.a*)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt; *.h; *.inc)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Target 1), 0x0004 // Tools: 'ARM-ADS'
+GRPOPT 1,(Source Group 1),1,0,0
+
+OPTFFF 1,1,2,0,0,0,0,0,<.\Startup.s><Startup.s> 
+
+
+TARGOPT 1, (Target 1)
+ ADSCLK=12000000
+  OPTTT 0,1,1,0
+  OPTHX 1,65535,0,0,0
+  OPTLX 79,66,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTAX 255
+  OPTBL 0,(Data Sheet)<DATASHTS\PHILIPS\LPC2131_32_34_36_38.PDF>
+  OPTDL (SARM.DLL)(-cLPC2100)(DARMP.DLL)(-pLPC2132)(SARM.DLL)()(TARMP.DLL)(-pLPC2132)
+  OPTDBG 48125,-1,()()()()()()()()()() ()()()()
+  OPTDF 0x40000002
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

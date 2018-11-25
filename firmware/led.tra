@@ -1,0 +1,24 @@
+*** Creating Trace Output File 'led.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"demo.o"'
+### List of Objects: adding '"pwm.o"'
+### List of Objects: adding '"spi.o"'
+### List of Objects: adding '"i2c.o"'
+### List of Objects: adding '".\HID.lib"'
+### ADS-LD Command completed:
+--device DARMP "startup.o" "demo.o" "pwm.o" "spi.o" "i2c.o" ".\HID.lib" --strict --scatter "led.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\led.map" -o "led.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'led.axf'
+### ADS-LD Command File: 'led.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'led.lnp', Handle=0x00000B14
+### Writing '.lnp' file
+### ADS-LD Command file 'led.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.
