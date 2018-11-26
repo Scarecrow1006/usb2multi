@@ -10,5 +10,6 @@ extern unsigned char I2C_READ_NACK( void );
 extern void I2C_MULTIREAD( char* arr , int bytes );
 extern void I2C_STOP( void );
 extern void I2C_func(unsigned char addr, unsigned char dat);
+unsigned char I2C_funcr(unsigned char addr);
 
 #endif

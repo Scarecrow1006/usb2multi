@@ -9,3 +9,4 @@ demo.o: demo.h
 demo.o: PWM.h
 demo.o: SPI.h
 demo.o: I2C.h
+demo.o: ADC.h
