@@ -18,6 +18,7 @@ int setmode(hid_device *handle);
 void delay(int mili);
 void send_usb(char cmd, char data, hid_device *handle);
 void reset_mode(hid_device *handle);
+unsigned char read_usb(hid_device *handle);
 
 int main(int argc, char* argv[]){
 	wchar_t wstr[MAX_STR];
@@ -44,31 +45,47 @@ int main(int argc, char* argv[]){
 		return 1;
 	}
 
+	hid_set_nonblocking(handle, 0);
+
 	char outreport;
 	int mode=0;
 	char str[100];
 	char reset[]="reset";
+	char exit[]="exit";
+	char read[]="read";
 	char *endptr;
-	char c;
+	unsigned char c;
 	long x;
-	int rstflag;
+	int rstflag,exitflag,rdflag;
 	
 	while(1){
 		rstflag=0;
-		if (mode==0) mode = setmode(handle);
+		exitflag=0;
+		rdflag=0;
+		//if (mode==5) rdflag=1;
+		if (mode==0) 
+			mode = setmode(handle);
 		else{
 			while(1){
 				printf(":");
 				scanf("%s",str);
 				x=strtol(str,&endptr,0);
 				if(endptr==str){
-					if(strcmp(str,reset)!=0){
-						printf("retry\n");
-						continue;
-					}
-					else{
+					if(strcmp(str,reset)==0){
 						rstflag=1;
 						break;
+					}
+					else if (strcmp(str,exit)==0){
+						exitflag=1;
+						break;
+					}
+					else if (strcmp(str,read)==0){
+						rdflag=1;
+						break;
+					}
+					else{
+						printf("retry\n");
+						continue;
 					}
 				}
 				else{
@@ -77,11 +94,26 @@ int main(int argc, char* argv[]){
 				}
 			}
 
-			if(!rstflag) send_usb(1,c,handle);
-			else {
+			if(exitflag) break;
+			else if(rstflag){
 				reset_mode(handle);
 				mode=0;
 			}
+			else if(rdflag){
+				switch(mode){
+					case 1:
+					case 2:
+					case 4:
+						printf("read invalid for current mode\n");
+						break;
+					case 3:
+					case 5:
+						c=read_usb(handle);
+						printf("]%u\n", (unsigned int) c);
+						break;
+				}
+			}
+			else send_usb(1,c,handle);
 		}
 	}
 
@@ -106,7 +138,7 @@ int setmode(hid_device *handle){
 	int mode=0;
 	int slvaddr;
 	cat("mode");
-	while((mode==0) || (mode>=5)){
+	while((mode==0) || (mode>=6)){
 		printf(">");
 		scanf("%d", &mode);
 	}
@@ -128,6 +160,10 @@ int setmode(hid_device *handle){
 			break;
 		case 4: 
 			printf("Switching to PWM...\n");
+			break;
+		case 5:
+			printf("Switching to ADC read\n");
+			printf("Enter 'read' to read digital value.(8-bit)\n");
 			break;
 	}
 	cat("greet");
@@ -151,4 +187,10 @@ void send_usb(char cmd, char data, hid_device *handle){
 void reset_mode(hid_device *handle){
 	buf[0]=0;
 	hid_write(handle, buf, 65);
+}
+
+unsigned char read_usb(hid_device *handle){
+	unsigned char c=0;
+	hid_read(handle, &c, 1);
+	return c;
 }

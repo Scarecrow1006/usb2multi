@@ -3,3 +3,4 @@ Select mode of operation:
 2. SPI
 3. I2C
 4. PWM
+5. ADC
